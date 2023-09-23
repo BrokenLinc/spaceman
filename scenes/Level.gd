@@ -13,10 +13,20 @@ const Coin = preload("res://scenes/Coin.tscn")
 @onready var player = %Player
 @onready var pickup_sound = $PickupSound
 
-
 func _ready():
 	Globals.current_level = self
-	update_health_bar()
+
+	# Connect to global signals
+	Globals.connect("enemy_killed", _on_enemy_killed)
+	Globals.connect("player_coins_gained", _on_player_coins_gained)
+
+
+func _on_enemy_killed(enemy: Node2D):
+	spawn_coin(enemy.position)
+
+
+func _on_player_coins_gained(_amount: int):
+	pickup_sound.play()
 
 
 func _process(_delta):
@@ -31,24 +41,9 @@ func _process(_delta):
 		enemy.position = Globals.player_position + direction * Globals.spawn_radius
 
 
-func kill_enemy(enemy: Node2D):
-	# spawn a coin at the enemy's position
+func spawn_coin(spawn_position: Vector2):
 	var coin = Coin.instantiate()
-	coin.position = enemy.position
+	coin.position = spawn_position
+
 	# add coin to the "%Items" node, but wait until the next frame
 	objects.call_deferred("add_child", coin)
-
-
-func take_damage(damage: int):
-	player.take_damage(damage)
-	update_health_bar()
-
-
-func update_health_bar():
-	hud.update_health_bar()
-	player.update_health_bar()
-
-
-func update_coins():
-	pickup_sound.play()
-	hud.update_coins()

@@ -9,8 +9,7 @@ var injury_tween: Tween
 
 
 func _ready():
-	pass
-
+	Globals.connect("player_damaged", _on_player_damaged)
 
 func _physics_process(_delta: float):
 	# movement input
@@ -22,6 +21,11 @@ func _physics_process(_delta: float):
 	# Make the character face the direction it's moving (left or right)
 	if direction.x != 0:
 		sprite.flip_h = direction.x < 0
+
+
+func _on_player_damaged(_damage: int):
+	update_health_bar()
+	play_injury_effect()
 
 
 func _on_magnet_body_entered(_body: Item):
@@ -37,7 +41,7 @@ func update_health_bar():
 	health_bar.value = float(Globals.player_health)
 
 
-func take_damage(_damage: int):
+func play_injury_effect():
 	if injury_tween:
 		injury_tween.kill()
 	injury_tween = get_tree().create_tween()
