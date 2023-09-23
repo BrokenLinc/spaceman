@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsvoqgmv1kc4t"]
+
+[ext_resource type="Script" path="res://scenes/Blaster.gd" id="1_d7305"]
+[ext_resource type="AudioStream" uid="uid://dntapditxtqjr" path="res://sounds/plasmacannon-94545.mp3" id="2_waysy"]
+
+[node name="Blaster" type="Node2D"]
+script = ExtResource("1_d7305")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_waysy")
+volume_db = -19.676
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

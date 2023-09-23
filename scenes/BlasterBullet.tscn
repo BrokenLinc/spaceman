@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddgpq8kes5lp4"]
+
+[ext_resource type="Script" path="res://scenes/BlasterBullet.gd" id="1_l5axc"]
+[ext_resource type="Texture2D" uid="uid://b4eu600jnnsag" path="res://assets/blaster-bullet-1.png" id="1_qbfdk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5iy3b"]
+radius = 2.0
+height = 28.0
+
+[sub_resource type="Curve" id="Curve_jd88b"]
+_data = [Vector2(0.0101628, 0.992333), 0.0, 0.0, 0, 0, Vector2(1, 0.0023731), -3.56862, 0.0, 0, 0]
+point_count = 2
+
+[node name="BlasterBullet" type="Area2D"]
+collision_layer = 2
+collision_mask = 36
+script = ExtResource("1_l5axc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-30, 0)
+texture = ExtResource("1_qbfdk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5iy3b")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 32
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 20.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_jd88b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

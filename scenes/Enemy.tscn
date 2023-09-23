@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://2wnq37kwgxsb"]
+
+[ext_resource type="Script" path="res://scenes/Enemy.gd" id="1_dk86o"]
+[ext_resource type="Texture2D" uid="uid://bs54s44sfts74" path="res://assets/fish.png" id="2_bhoa1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctbtx"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eywfj"]
+radius = 23.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 38
+script = ExtResource("1_dk86o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bhoa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ctbtx")
+
+[node name="Melee" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Melee"]
+shape = SubResource("CircleShape2D_eywfj")
+
+[node name="MeleeTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Melee" to="." method="_on_melee_body_entered"]
+[connection signal="body_exited" from="Melee" to="." method="_on_melee_body_exited"]
+[connection signal="timeout" from="MeleeTimer" to="." method="_on_melee_timer_timeout"]
