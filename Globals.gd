@@ -1,5 +1,9 @@
 extends Node
 
+signal enemy_killed(enemy: Enemy)
+signal player_damaged(damage: int)
+signal player_coins_gained(amount: int)
+
 var current_camera: Camera2D
 var current_level: Level
 
@@ -24,13 +28,13 @@ var target_range = 350
 
 func take_damage(damage: int):
 	player_health -= damage
-	current_level.take_damage(damage)
+	emit_signal("player_damaged", damage)
 
 
 func kill_enemy(enemy: Node2D):
-	current_level.kill_enemy(enemy)
+	emit_signal("enemy_killed", enemy)
 
 
 func gain_coins(amount: int):
 	player_coins += amount
-	current_level.update_coins()
+	emit_signal("player_coins_gained", amount)
