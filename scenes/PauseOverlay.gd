@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready():
+  process_mode = Node.PROCESS_MODE_ALWAYS
   %Root.hide()
 
   Globals.connect("game_paused", _on_game_paused)
@@ -14,3 +15,6 @@ func _on_game_paused():
 func _on_game_resumed():
   %Root.hide()
 
+
+func _on_main_menu_button_pressed():
+  Globals.load_main_menu()
