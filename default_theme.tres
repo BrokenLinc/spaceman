@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b2viljn765xjf"]
+
+[ext_resource type="FontFile" uid="uid://l4bxwc1fj8ln" path="res://assets/NASAL.TTF" id="1_o60bt"]
+
+[resource]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_o60bt")

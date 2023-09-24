@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn3iklr2hbtr3"]
+[gd_scene load_steps=5 format=3 uid="uid://cn3iklr2hbtr3"]
 
 [ext_resource type="Script" path="res://scenes/Hud.gd" id="1_ap7uf"]
 [ext_resource type="Texture2D" uid="uid://loi6c1me1rme" path="res://assets/coin.png" id="2_hl2h4"]
+[ext_resource type="Theme" uid="uid://b2viljn765xjf" path="res://default_theme.tres" id="3_hhjvm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym8rk"]
 bg_color = Color(0.952941, 0.384314, 0.435294, 1)
@@ -69,6 +70,7 @@ stretch_mode = 3
 [node name="CoinCount" type="Label" parent="TopBar/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_hhjvm")
 theme_override_constants/line_spacing = 0
 text = "0"
 horizontal_alignment = 1

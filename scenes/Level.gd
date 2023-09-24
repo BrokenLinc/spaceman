@@ -19,6 +19,8 @@ func _ready():
 	# Connect to global signals
 	Globals.connect("enemy_killed", _on_enemy_killed)
 	Globals.connect("player_coins_gained", _on_player_coins_gained)
+	# Globals.connect("game_paused", _on_game_paused)
+	# Globals.connect("game_resumed", _on_game_resumed)
 
 
 func _on_enemy_killed(enemy: Node2D):
@@ -47,3 +49,9 @@ func spawn_coin(spawn_position: Vector2):
 
 	# add coin to the "%Items" node, but wait until the next frame
 	objects.call_deferred("add_child", coin)
+
+# func _on_game_paused():
+# 	set_process(false)
+
+# func _on_game_resumed():
+# 	set_process(true)

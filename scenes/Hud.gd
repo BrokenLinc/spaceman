@@ -6,7 +6,7 @@ extends CanvasLayer
 
 
 func _ready():
-	Globals.connect("player_coins_gamed", _on_player_coins_gained)
+	Globals.connect("player_coins_gained", _on_player_coins_gained)
 	Globals.connect("player_damaged", _on_player_damaged)
 
 
