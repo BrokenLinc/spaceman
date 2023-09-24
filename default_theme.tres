@@ -1,6 +1,28 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b2viljn765xjf"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b2viljn765xjf"]
 
 [ext_resource type="FontFile" uid="uid://l4bxwc1fj8ln" path="res://assets/NASAL.TTF" id="1_o60bt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5df2i"]
+content_margin_left = 8.0
+content_margin_top = 16.0
+content_margin_right = 8.0
+content_margin_bottom = 16.0
+bg_color = Color(0.917647, 0.341176, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqbel"]
+content_margin_left = 8.0
+content_margin_top = 16.0
+content_margin_right = 8.0
+content_margin_bottom = 16.0
+bg_color = Color(0.917647, 0.341176, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3gq8"]
 content_margin_left = 16.0
@@ -13,9 +35,23 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on0mx"]
+content_margin_left = 8.0
+content_margin_top = 16.0
+content_margin_right = 8.0
+content_margin_bottom = 16.0
+bg_color = Color(0.917647, 0.584314, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [resource]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_o60bt")
+Button/styles/focus = SubResource("StyleBoxFlat_5df2i")
+Button/styles/hover = SubResource("StyleBoxFlat_fqbel")
 Button/styles/normal = SubResource("StyleBoxFlat_r3gq8")
+Button/styles/pressed = SubResource("StyleBoxFlat_on0mx")
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_o60bt")
