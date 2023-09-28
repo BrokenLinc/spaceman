@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bs54s44sfts74" path="res://assets/fish.png" id="2_bhoa1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctbtx"]
-radius = 20.0
+radius = 38.6394
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eywfj"]
-radius = 23.0
+radius = 58.0775
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -16,7 +16,6 @@ script = ExtResource("1_dk86o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5, -2)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_bhoa1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

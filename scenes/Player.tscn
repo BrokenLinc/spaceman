@@ -5,13 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://dhwml3mt217xf" path="res://sounds/ouch-sound-effect-30-11844.mp3" id="3_l8mih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hc6sr"]
-radius = 20.0998
+radius = 35.2278
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_42v5v"]
-radius = 12.0416
+radius = 22.0907
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u3ey3"]
-radius = 87.0
+radius = 194.312
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y162s"]
 bg_color = Color(0.952941, 0.384314, 0.435294, 1)
@@ -26,7 +26,6 @@ script = ExtResource("1_mnvuo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_owm4u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -47,10 +46,10 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_u3ey3")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -23.0
-offset_top = 39.0
-offset_right = 23.0
-offset_bottom = 46.0
+offset_left = -45.0
+offset_top = 75.0
+offset_right = 45.0
+offset_bottom = 90.0
 size_flags_vertical = 1
 theme_override_styles/fill = SubResource("StyleBoxFlat_y162s")
 value = 100.0

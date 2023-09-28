@@ -2,16 +2,24 @@
 
 [ext_resource type="FontFile" uid="uid://l4bxwc1fj8ln" path="res://assets/NASAL.TTF" id="1_o60bt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5df2i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8l87"]
 content_margin_left = 8.0
 content_margin_top = 16.0
 content_margin_right = 8.0
 content_margin_bottom = 16.0
 bg_color = Color(0.917647, 0.341176, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqbel"]
 content_margin_left = 8.0
@@ -49,7 +57,7 @@ corner_radius_bottom_left = 12
 [resource]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_o60bt")
-Button/styles/focus = SubResource("StyleBoxFlat_5df2i")
+Button/styles/focus = SubResource("StyleBoxFlat_g8l87")
 Button/styles/hover = SubResource("StyleBoxFlat_fqbel")
 Button/styles/normal = SubResource("StyleBoxFlat_r3gq8")
 Button/styles/pressed = SubResource("StyleBoxFlat_on0mx")

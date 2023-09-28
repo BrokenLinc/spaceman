@@ -2,6 +2,7 @@ extends Node
 
 signal enemy_killed(enemy: Enemy)
 signal player_damaged(damage: int)
+signal player_died()
 signal player_coins_gained(amount: int)
 signal game_paused()
 signal game_resumed()
@@ -22,29 +23,32 @@ var current_level: Level
 
 var enemy_base_health = 30
 var enemy_base_melee_damage = 20
-var enemy_base_speed = 70
+var enemy_base_speed = 140
 var max_enemies = 30
 
 var is_paused = false
 
-var player_base_speed = 330
+var player_base_speed = 660
 var player_coins = 0
 var player_max_health = 100
 var player_health = player_max_health
 var player_position = Vector2(0, 0)
 
-var projectile_base_speed = 600
+var projectile_base_speed = 1200
 var projectile_base_damage = 20
 
-var spawn_radius = 600	# TODO: make this update with the camera zoom
+var spawn_radius = 1200	# TODO: make this update with the camera zoom
 var despawn_radius = spawn_radius * 1.2
-var target_range = 350
+var target_range = 700
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func start_game():
 	get_tree().change_scene_to_file(levels.level_1.path)
+
+func quit_game():
+	get_tree().quit()
 
 func reset_state():
 	player_health = player_max_health
@@ -62,6 +66,9 @@ func is_player_dead() -> bool:
 func take_damage(damage: int):
 	player_health -= damage
 	emit_signal("player_damaged", damage)
+	if (is_player_dead()):
+		current_level.get_tree().paused = true
+		emit_signal("player_died")
 
 
 func kill_enemy(enemy: Node2D):

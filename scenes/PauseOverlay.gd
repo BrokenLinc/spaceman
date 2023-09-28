@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var mainMenuButton = %MainMenuButton;
 @onready var resumeButton = %ResumeButton;
 
 func _ready():

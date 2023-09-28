@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://mt38dtsy65x3"]
+[gd_scene load_steps=10 format=3 uid="uid://mt38dtsy65x3"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_7o8a8"]
 [ext_resource type="PackedScene" uid="uid://c1ltrc2gtccwr" path="res://scenes/Background.tscn" id="1_8n1xu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cn3iklr2hbtr3" path="res://scenes/Hud.tscn" id="6_tmavy"]
 [ext_resource type="AudioStream" uid="uid://chibqgal4c04l" path="res://sounds/coin_c_02-102844.mp3" id="7_0o8d7"]
 [ext_resource type="PackedScene" uid="uid://b81nnikawbt1t" path="res://scenes/PauseOverlay.tscn" id="7_rc6ej"]
+[ext_resource type="PackedScene" uid="uid://bggj7rngwvi48" path="res://scenes/GameOverOverlay.tscn" id="8_s1w01"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7o8a8")
@@ -34,7 +35,8 @@ y_sort_enabled = true
 [node name="Hud" parent="." instance=ExtResource("6_tmavy")]
 
 [node name="PauseOverlay" parent="." instance=ExtResource("7_rc6ej")]
-unique_name_in_owner = true
+
+[node name="GameOverOverlay" parent="." instance=ExtResource("8_s1w01")]
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0o8d7")

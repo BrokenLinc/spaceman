@@ -8,14 +8,12 @@ script = ExtResource("1_rerq8")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(512, 512)
+motion_mirroring = Vector2(1024, 1024)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-unique_name_in_owner = true
 modulate = Color(0.34902, 0.34902, 0.34902, 1)
 texture_repeat = 2
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_xdiur")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 2816, 1136)
+region_rect = Rect2(0, 0, 1920, 1080)
