@@ -57,15 +57,20 @@ theme_override_constants/separation = 16
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_meqhn")
-text = "Start Game
-"
+text = "Play Game"
+
+[node name="ShopButton" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_meqhn")
+text = "Shop"
 
 [node name="QuitButton" type="Button" parent="Control/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_meqhn")
-text = "Quit
-"
+text = "Quit"
 
 [connection signal="pressed" from="Control/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

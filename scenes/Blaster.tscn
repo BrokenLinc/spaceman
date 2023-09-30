@@ -7,10 +7,11 @@
 script = ExtResource("1_d7305")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.4
+unique_name_in_owner = true
 autostart = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("2_waysy")
 volume_db = -19.676
 

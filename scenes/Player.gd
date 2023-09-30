@@ -44,7 +44,7 @@ func update_health_bar():
 func play_injury_effect():
 	if injury_tween:
 		injury_tween.kill()
-	injury_tween = get_tree().create_tween()
+	injury_tween = self.create_tween()
 
 	sprite.modulate = Color.RED
 	injury_tween.tween_property(sprite, "modulate", Color.WHITE, 0.2)

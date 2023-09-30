@@ -12,3 +12,7 @@ func _on_start_button_pressed():
 
 func _on_quit_button_pressed():
   Globals.quit_game()
+
+
+func _on_shop_button_pressed():
+  Globals.load_shop()

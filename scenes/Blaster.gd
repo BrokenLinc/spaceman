@@ -3,8 +3,11 @@ extends Node2D
 # import the BlasterBullet scene
 const BlasterBullet = preload("res://scenes/BlasterBlob.tscn")
 
-@onready var shoot_sound = $ShootSound
+@onready var timer = %Timer
+@onready var shoot_sound = %ShootSound
 
+func _ready():
+	timer.set_wait_time(Globals.projectile_base_rate)
 
 func _on_timer_timeout():
 	# find the closest enemy within the target distance

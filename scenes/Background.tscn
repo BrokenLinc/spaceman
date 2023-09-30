@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1ltrc2gtccwr"]
+[gd_scene load_steps=2 format=3 uid="uid://c1ltrc2gtccwr"]
 
-[ext_resource type="Script" path="res://scenes/Background.gd" id="1_rerq8"]
 [ext_resource type="Texture2D" uid="uid://dn816gkqte8q3" path="res://assets/space.png" id="2_xdiur"]
 
 [node name="Background" type="ParallaxBackground"]
-script = ExtResource("1_rerq8")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.8, 0.8)
@@ -16,4 +14,4 @@ texture_repeat = 2
 texture = ExtResource("2_xdiur")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1080)
+region_rect = Rect2(0, 0, 1920, 1200)

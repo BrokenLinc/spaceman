@@ -6,7 +6,6 @@ class_name Camera
 
 
 func _ready():
-	Globals.current_camera = self
 	# Set the size of the collider to the viewport size
 	collision_shape.scale = get_viewport_rect().size  # TODO: check if this is correct
 
