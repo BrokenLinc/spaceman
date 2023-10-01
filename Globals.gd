@@ -25,28 +25,28 @@ var game_scenes = {
 	}
 }
 
-var enemy_base_health = 30
-var enemy_base_melee_damage = 20
-var enemy_base_speed = 140
+var enemy_base_health = 30.0
+var enemy_base_melee_damage = 20.0
+var enemy_base_speed = 140.0
 var max_enemies = 5
 
 var curent_game_scene = game_scenes.main_menu
 var is_paused = false
 
-var player_base_speed = 330
+var player_base_speed = 330.0
 var player_coins = 0
 var player_saved_coins = 0
-var player_max_health = 100
+var player_max_health = 100.0
 var player_health = player_max_health
 var player_position = Vector2(0, 0)
 
-var projectile_base_speed = 600
+var projectile_base_speed = 600.0
 var projectile_base_rate = 1.0
-var projectile_base_damage = 10
+var projectile_base_damage = 10.0
 
-var spawn_radius = 1200	# TODO: make this update with the camera zoom
+var spawn_radius = 1200.0	# TODO: make this update with the camera zoom
 var despawn_radius = spawn_radius * 1.2
-var target_range = 700
+var target_range = 700.0
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS

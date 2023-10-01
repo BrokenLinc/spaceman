@@ -56,7 +56,7 @@ func _on_melee_timer_timeout() -> void:
 	can_melee = true
 
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: float) -> void:
 	health -= damage
 	if health <= 0:
 		queue_free()

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://6qlh7s5fimn3"]
+
+[ext_resource type="Texture2D" uid="uid://c5ixc2ku6ft0o" path="res://assets/laser.png" id="1_alqii"]
+[ext_resource type="Script" path="res://scenes/Laser.gd" id="1_kcxh1"]
+[ext_resource type="AudioStream" uid="uid://cmi56us65ohls" path="res://sounds/062708_laser-charging-81968.mp3" id="3_n8ec3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3udd"]
+size = Vector2(100, 4)
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_kcxh1")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_n8ec3")
+volume_db = -19.676
+
+[node name="Beam1" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam1"]
+position = Vector2(50, 0)
+scale = Vector2(8.333, 2)
+texture = ExtResource("1_alqii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam1"]
+position = Vector2(50, 0)
+shape = SubResource("RectangleShape2D_l3udd")
+
+[node name="Beam2" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam2"]
+position = Vector2(50, 0)
+scale = Vector2(8.333, 2)
+texture = ExtResource("1_alqii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam2"]
+position = Vector2(50, 0)
+shape = SubResource("RectangleShape2D_l3udd")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
